@@ -1,0 +1,97 @@
+@startuml cinema
+
+class Filme {
+    - id int
+    - titulo string
+    - ano int
+    - duracao int
+    - descricao string
+    - faixa_etaria int
+    - diretor string
+    - categoria Categoria
+    - genero Genero
+    + cadastrarFilme(titulo, genero, diretor, ano, duracao, descricao, categoria, genero, faixa_etaria)
+    + consultarFilme(id)
+    + editarFilme(id)
+    + excluirFilme(id)
+}
+
+class Pessoa {
+    - id int
+    - nome string
+    - sobrenome string
+    # cpf int
+    - idade int
+    - dataNascimento date
+    + cadastrarPessoa(nome, sobrenome, cpf, idade, dataNascimento)
+    + consultarPessoa(cpf)
+    + editarPessoa(cpf)
+    + excluirPessoa(id)
+}
+
+class Categoria {
+    - id int
+    - titulo string
+    - descricao string
+    + cadastrarCategoria(titulo, descricao)
+    + consultarCategoria(id)
+    + editarCategoria(id)
+    + excluirCategoria(id)
+}
+
+class Genero {
+    - id int
+    - nome string
+    - descricao string
+    + cadastrarGenero(nome, descricao)
+    + consultarGenero(id)
+    + editarGenero(id)
+    + excluirGenero(id)
+}
+
+class Ingresso {
+    - id int
+    - nome_comprador string
+    - documento_comprador int
+    - assento Sala
+    - sessao Sessao
+    - pessoa Pessoa
+    + cadastrarIngresso (nome_comprador, idade_comprador, documento_comprador)
+    + consultarIngresso(id)
+    + excluirIngresso(id)    
+}
+
+class Sala {
+    - id int
+    - numero_sala int
+    - assentos int
+    - tipo_sala string
+    + cadastrarSala(numero_sala, assentos, tipo_sala)
+    + consultarSala(id)
+    + editarSala(id)
+    + excluirSala(id)
+}
+
+class Sessao {
+    - id int
+    - horario date
+    - filme Filme
+    - sala Sala
+    + cadastrarSessao(horario)
+    + consultarSessao(id)
+    + editarSessao(id)
+    + excluirSessao(id)
+}
+
+Filme *-- Categoria
+Filme *-- Genero
+
+Sala --* Sessao
+
+Sessao *-- Filme
+
+Pessoa --* Ingresso
+
+Ingresso *-- Sala
+
+@enduml
