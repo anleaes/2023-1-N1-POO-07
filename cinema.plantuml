@@ -6,7 +6,7 @@ class Filme {
     - ano int
     - duracao int
     - descricao string
-    - faixa_etaria int
+    - faixa_etariaa int
     - diretor string
     - categoria Categoria
     - genero Genero
