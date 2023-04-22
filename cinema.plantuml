@@ -6,14 +6,16 @@ class Filme {
     - ano int
     - duracao int
     - descricao string
-    - faixa_etariaa int
+    - faixa_etaria int
     - diretor string
+    - avaliacao_geral string
     - categoria Categoria
     - genero Genero
-    + cadastrarFilme(titulo, genero, diretor, ano, duracao, descricao, categoria, genero, faixa_etaria)
+    + cadastrarFilme(titulo, ano, duracao, descricao, faixa_etaria, diretor, avaliacao_geral, categoria, genero)
     + consultarFilme(id)
     + editarFilme(id)
     + excluirFilme(id)
+    + listarFilmes()
 }
 
 class Pessoa {
@@ -37,6 +39,7 @@ class Categoria {
     + consultarCategoria(id)
     + editarCategoria(id)
     + excluirCategoria(id)
+    + listarCategorias()
 }
 
 class Genero {
@@ -47,18 +50,19 @@ class Genero {
     + consultarGenero(id)
     + editarGenero(id)
     + excluirGenero(id)
+    + listarGeneros()
 }
 
 class Ingresso {
     - id int
-    - nome_comprador string
-    - documento_comprador int
     - assento Sala
     - sessao Sessao
     - pessoa Pessoa
-    + cadastrarIngresso (nome_comprador, idade_comprador, documento_comprador)
+    + cadastrarIngresso (nome_comprador, idade_comprador, documento_comprador, assento, sessao, pessoa)
+    + consultarDadosComprador(pessoa.id)
     + consultarIngresso(id)
     + excluirIngresso(id)    
+    + buscarSessao(sessao.id)
 }
 
 class Sala {
@@ -70,6 +74,7 @@ class Sala {
     + consultarSala(id)
     + editarSala(id)
     + excluirSala(id)
+    + listarSalas()
 }
 
 class Sessao {
@@ -77,10 +82,11 @@ class Sessao {
     - horario date
     - filme Filme
     - sala Sala
-    + cadastrarSessao(horario)
+    + cadastrarSessao(horario, filme, sala)
     + consultarSessao(id)
     + editarSessao(id)
     + excluirSessao(id)
+    + listarSessoes()
 }
 
 Filme *-- Categoria
