@@ -1,23 +1,23 @@
 class Genero :
 
-    def __init__(self, nome, descricao) :
-        self.nome = nome
-        self.descricao = descricao
+    def __init__(self, nome_genero, descricao_genero) :
+        self._nome_genero = nome_genero
+        self._descricao_genero = descricao_genero
 
 #   GET e SET do _nome_
-    def get_nome(self) :
-        return self.nome
+    def get_nomeGenero(self) :
+        return self._nome_genero
     
-    def set_nome(self, nome) :
-        self._nome = nome
+    def set_nomeGenero(self, nome_genero) :
+        self._nome_genero = nome_genero
 
 #   GET e SET da _descricao_
-    def get_descricao(self) :
-        return self.descricao
+    def get_descricaoGenero(self) :
+        return self._descricao_genero
 
-    def set_descricao(self, descricao) :
-        self._descricao = descricao
+    def set_descricaoGenero(self, descricao_genero) :
+        self._descricao_genero = descricao_genero
 
 #   Informações do Gênero
     def genero(self) :
-        return "Gênero: " + self.nome + "\n Descrição: " + self.descricao    
+        return "Gênero: " + self._nome_genero + "\n Descrição: " + self._descricao_genero    
