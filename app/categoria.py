@@ -1,25 +1,25 @@
 class Categoria :
     
-    def __init__(self, titulo, descricao) :
-        self.titulo = titulo
-        self.descricao = descricao
+    def __init__(self, titulo_categoria, descricao_categoria) :
+        self._titulo_categoria = titulo_categoria
+        self._descricao_categoria = descricao_categoria
 
 #   GET e SET do _titulo_
-    def get_titulo(self) :
-        return self.titulo
+    def get_tituloCategoria(self) :
+        return self._titulo_categoria
     
-    def set_titulo(self, titulo) :
-        self._titulo = titulo
+    def set_tituloCategoria(self, titulo_categoria) :
+        self._titulo_categoria = titulo_categoria
 
 #   GET e SET da _descricao_
-    def get_descricao(self) :
-        return self.descricao
+    def get_descricaoCategoria(self) :
+        return self._descricao_categoria
 
-    def set_descricao(self, descricao) :
-        self._descricao = descricao
+    def set_descricaoCategoria(self, descricao) :
+        self._descricao_categoria = descricao_categoria
 
 
 #   Informações da Categoria
     def categoria(self) :
-        return "Categoria: " + self.titulo + "\n Descrição: " + self.descricao
+        return "Categoria: " + self._titulo_categoria + "\n Descrição: " + self._descricao_categoria
     
