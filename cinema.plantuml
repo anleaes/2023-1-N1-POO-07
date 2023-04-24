@@ -1,92 +1,65 @@
 @startuml cinema
 
 class Filme {
-    - id int
-    - titulo string
-    - ano int
-    - duracao int
-    - descricao string
-    - faixa_etaria int
-    - diretor string
-    - avaliacao_geral string
+    - id Int
+    - titulo_filme String
+    - ano Int
+    - duracao Int
+    - descricao_filme String
+    - faixa_etaria Int
+    - diretor String
+    - avaliacao_geral String
     - categoria Categoria
     - genero Genero
-    + cadastrarFilme(titulo, ano, duracao, descricao, faixa_etaria, diretor, avaliacao_geral, categoria, genero)
-    + consultarFilme(id)
-    + editarFilme(id)
-    + excluirFilme(id)
-    + listarFilmes()
+    + constructor (titulo_filme, ano, duracao, descricao_filme, faixa_etaria, diretor, avaliacao_geral, categoria, genero)
 }
 
 class Pessoa {
-    - id int
-    - nome string
-    - sobrenome string
-    # cpf int
-    - idade int
-    - dataNascimento date
-    + cadastrarPessoa(nome, sobrenome, cpf, idade, dataNascimento)
-    + consultarPessoa(cpf)
-    + editarPessoa(cpf)
-    + excluirPessoa(id)
+    - id Int
+    - nome String
+    - sobrenome String
+    # cpf Int
+    - idade Int
+    - dataNascimento Date
+    + constructor (nome, sobrenome, cpf, idade, dataNascimento)
 }
 
 class Categoria {
-    - id int
-    - titulo string
-    - descricao string
-    + cadastrarCategoria(titulo, descricao)
-    + consultarCategoria(id)
-    + editarCategoria(id)
-    + excluirCategoria(id)
-    + listarCategorias()
+    - id Int
+    - titulo_categoria String
+    - descricao_categoria String
+    + constructor (titulo_categoria, descricao_categoria)
 }
 
 class Genero {
-    - id int
-    - nome string
-    - descricao string
-    + cadastrarGenero(nome, descricao)
-    + consultarGenero(id)
-    + editarGenero(id)
-    + excluirGenero(id)
-    + listarGeneros()
+    - id Int
+    - nome_genero String
+    - descricao_genero String
+    + constructor (nome_genero, descricao_genero)
 }
 
 class Ingresso {
-    - id int
+    - id Int
     - assento Sala
     - sessao Sessao
     - pessoa Pessoa
-    + cadastrarIngresso (nome_comprador, idade_comprador, documento_comprador, assento, sessao, pessoa)
-    + consultarDadosComprador(pessoa.id)
-    + consultarIngresso(id)
-    + excluirIngresso(id)    
-    + buscarSessao(sessao.id)
+    + constructor (nome_comprador, idade_comprador, documento_comprador, assento, sessao, pessoa)
 }
 
 class Sala {
-    - id int
-    - numero_sala int
-    - assentos int
-    - tipo_sala string
-    + cadastrarSala(numero_sala, assentos, tipo_sala)
-    + consultarSala(id)
-    + editarSala(id)
-    + excluirSala(id)
-    + listarSalas()
+    - id Int
+    - numero_sala Int
+    - assentos Int
+    - tipo_sala String
+    + constructor (numero_sala, assentos, tipo_sala)
 }
 
 class Sessao {
-    - id int
-    - horario date
+    - id Int
+    - horario Date
     - filme Filme
     - sala Sala
-    + cadastrarSessao(horario, filme, sala)
-    + consultarSessao(id)
-    + editarSessao(id)
-    + excluirSessao(id)
-    + listarSessoes()
+    + constructor (horario, filme, sala)
 }
 
 Filme *-- Categoria
